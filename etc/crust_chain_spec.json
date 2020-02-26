@@ -37,7 +37,7 @@
         "vesting": []
       },
       "staking": {
-        "validatorCount": 6,
+        "validatorCount": 2,
         "minimumValidatorCount": 1,
         "invulnerables": [
           "5Gc3Z7Z6gS1X4ydZ2YfTAtmXsQzD65bjPwjeQh3y5etiJB4b"
