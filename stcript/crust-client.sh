@@ -226,6 +226,12 @@ function chainLaunchGenesis()
         chain_start_stcript="$chain_start_stcript --node-key=$node_key"
         verbose INFO " SUCCESS" t
     fi
+
+    if [ ! -z $key ]; then
+        verbose INFO "Add secret phrase key" h
+        chain_start_stcript="$chain_start_stcript --key=$key"
+        verbose INFO " SUCCESS" t
+    fi
     
     verbose INFO "Try to kill old crust chain with same <chain-launch.json>" h
     crust_chain_pid=$(ps -ef | grep "$chain_start_stcript" | grep -v grep | awk '{print $2}')
@@ -237,52 +243,6 @@ function chainLaunchGenesis()
         fi
     fi
     verbose INFO " SUCCESS" t
-
-    rand_log_file=$name.temp.log
-    verbose INFO "Generate temp log file $rand_log_file for crust chain node without babe and grandpa key" h
-    touch $rand_log_file
-    verbose INFO " SUCCESS" t
-    
-    verbose INFO "Start up crust chain node without babe and grandpa key" h
-    nohup $chain_start_stcript &>$rand_log_file &
-    verbose INFO " SUCCESS" t
-
-    verbose INFO "Please wait 20s for crust chain node starts completely..." n
-    timeout=20
-    while [ $timeout -gt 0 ]; do
-        echo -e "$timeout->\c"
-        ((timeout--))
-        sleep 1
-    done
-    verbose INFO " SUCCESS" t
-
-    verbose INFO "Send grandpa key to your chain" h
-    send_grandpa_key $rpc_port $public_key_ed25519 $secret_phrase
-    verbose INFO " SUCCESS" t
-
-    verbose INFO "Send babe key to your chain" h
-    send_babe_key $rpc_port $public_key_sr25519 $secret_phrase 
-    verbose INFO " SUCCESS" t
-
-    verbose INFO "Send im_online key to your chain" h
-    send_im_online_key $rpc_port $public_key_sr25519 $secret_phrase 
-    verbose INFO " SUCCESS" t
-
-    verbose INFO "Send authority_discovery key to your chain" h
-    send_authority_discovery_key $rpc_port $public_key_sr25519 $secret_phrase 
-    verbose INFO " SUCCESS" t
-
-    verbose INFO "Try to kill old crust chain with same <chain-launch.json> again" h
-    crust_chain_pid=$(ps -ef | grep "$chain_start_stcript" | grep -v grep | awk '{print $2}')
-    if [ x"$crust_chain_pid" != x"" ]; then
-        kill -9 $crust_chain_pid &>/dev/null
-        if [ $? -ne 0 ]; then
-            # If failed by using current user, kill it using root
-            sudo "kill -9 $crust_chain_pid" &>/dev/null
-        fi
-    fi
-    verbose INFO " SUCCESS" t
-    rm $rand_log_file &>/dev/null
 
     verbose WARN "You need to open the port($port) in your device to make external nodes to discover your node."
     sleep 1
