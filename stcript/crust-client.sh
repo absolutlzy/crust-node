@@ -191,7 +191,7 @@ function chainLaunchGenesis()
     fi
     
     source $2
-    if [ x"$secret_phrase" = x"" ] || [ x"$public_key_sr25519" = x"" ] || [ x"$address_sr25519" = x"" ] || [ x"$public_key_ed25519" = x"" ] || [ x"$address_ed25519" = x"" ]; then
+    if [ x"$secret_phrase" = x"" ] || [ x"$secret_seed" = x"" ] || [ x"$public_key_sr25519" = x"" ] || [ x"$address_sr25519" = x"" ] || [ x"$public_key_ed25519" = x"" ] || [ x"$address_ed25519" = x"" ]; then
         verbose ERROR " Failed" t
         verbose ERROR "Please give right chain-identity-file!"
         exit 1
@@ -256,20 +256,15 @@ function chainLaunchGenesis()
     done
     verbose INFO " SUCCESS" t
 
-    verbose INFO "Send grandpa key to your chain" h
-    send_grandpa_key $rpc_port $public_key_ed25519 $secret_phrase
-    verbose INFO " SUCCESS" t
+    verbose INFO "Send keys to your chain" h
 
-    verbose INFO "Send babe key to your chain" h
-    send_babe_key $rpc_port $public_key_sr25519 $secret_phrase 
-    verbose INFO " SUCCESS" t
+    RPC_ENDPOINT=localhost:$rpc_port
+    for KEY_TYPE in $(echo gran babe imon audi ) ; do
+        curl -H "Content-Type: application/json" \
+        --data '{ "jsonrpc":"2.0", "method":"author_insertKey", "params":["'"${KEY_TYPE}"'", "'"${secret_seed}"'"],"id":1 }' \
+        "${RPC_ENDPOINT}"
+    done
 
-    verbose INFO "Send im_online key to your chain" h
-    send_im_online_key $rpc_port $public_key_sr25519 $secret_phrase 
-    verbose INFO " SUCCESS" t
-
-    verbose INFO "Send authority_discovery key to your chain" h
-    send_authority_discovery_key $rpc_port $public_key_sr25519 $secret_phrase 
     verbose INFO " SUCCESS" t
 
     verbose INFO "Try to kill old crust chain with same <chain-launch.json> again" h
