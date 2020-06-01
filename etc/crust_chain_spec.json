@@ -29,32 +29,14 @@
           [
             "5Gc3Z7Z6gS1X4ydZ2YfTAtmXsQzD65bjPwjeQh3y5etiJB4b",
             2500000000000000000
-          ],
-          [
-            "5HpyALyFUJTDMc6iRziEKwh1BkvMHFJGHss3mJjXefuzCap3",
-            2500000000000000000
-          ],
-          [
-            "5FTbsFqd1wCp2zfJG6A1WmuXvMUJU7MugW2P9GHGNZoitxzr",
-            2500000000000000000
-          ],
-          [
-            "5EUJ6BjBJiztjsN14rFX5SXJFYzdeXbDsp6MeAJve7q2WkDm",
-            2500000000000000000
-          ],
-          [
-            "5CorT9c1EKYf2rtE4rpFhnQTf3JsBR3EZGfw1QhSBPVSn3t7",
-            2500000000000000000
           ]
         ]
       },
       "staking": {
-        "validatorCount": 6,
-        "minimumValidatorCount": 3,
+        "validatorCount": 2,
+        "minimumValidatorCount": 1,
         "invulnerables": [
-          "5Gc3Z7Z6gS1X4ydZ2YfTAtmXsQzD65bjPwjeQh3y5etiJB4b",
-          "5FTbsFqd1wCp2zfJG6A1WmuXvMUJU7MugW2P9GHGNZoitxzr",
-          "5CorT9c1EKYf2rtE4rpFhnQTf3JsBR3EZGfw1QhSBPVSn3t7"
+          "5Gc3Z7Z6gS1X4ydZ2YfTAtmXsQzD65bjPwjeQh3y5etiJB4b"
         ],
         "forceEra": "NotForcing",
         "slashRewardFraction": 100000000,
@@ -64,18 +46,6 @@
             "5Gc3Z7Z6gS1X4ydZ2YfTAtmXsQzD65bjPwjeQh3y5etiJB4b",
             "5HZFQohYpN4MVyGjiq8bJhojt9yCVa8rXd4Kt9fmh5gAbQqA",
             1250000000000000000,
-            "Validator"
-          ],
-          [
-            "5FTbsFqd1wCp2zfJG6A1WmuXvMUJU7MugW2P9GHGNZoitxzr",
-            "5HpyALyFUJTDMc6iRziEKwh1BkvMHFJGHss3mJjXefuzCap3",
-            1250000000000000000,
-            "Validator"
-          ],
-          [
-            "5CorT9c1EKYf2rtE4rpFhnQTf3JsBR3EZGfw1QhSBPVSn3t7",
-            "5EUJ6BjBJiztjsN14rFX5SXJFYzdeXbDsp6MeAJve7q2WkDm",
-            600000000000000000,
             "Validator"
           ]
         ]
@@ -90,26 +60,6 @@
               "babe": "5HZFQohYpN4MVyGjiq8bJhojt9yCVa8rXd4Kt9fmh5gAbQqA",
               "im_online": "5HZFQohYpN4MVyGjiq8bJhojt9yCVa8rXd4Kt9fmh5gAbQqA",
               "authority_discovery": "5HZFQohYpN4MVyGjiq8bJhojt9yCVa8rXd4Kt9fmh5gAbQqA"
-            }
-          ],
-          [
-            "5FTbsFqd1wCp2zfJG6A1WmuXvMUJU7MugW2P9GHGNZoitxzr",
-            "5FTbsFqd1wCp2zfJG6A1WmuXvMUJU7MugW2P9GHGNZoitxzr",
-            {
-              "grandpa": "5Fhktfg3jV6wDjVJnzp4GDHU3N8sKueAk9xfoNjzW4cx1pAp",
-              "babe": "5HpyALyFUJTDMc6iRziEKwh1BkvMHFJGHss3mJjXefuzCap3",
-              "im_online": "5HpyALyFUJTDMc6iRziEKwh1BkvMHFJGHss3mJjXefuzCap3",
-              "authority_discovery": "5HpyALyFUJTDMc6iRziEKwh1BkvMHFJGHss3mJjXefuzCap3"
-            }
-          ],
-          [
-            "5CorT9c1EKYf2rtE4rpFhnQTf3JsBR3EZGfw1QhSBPVSn3t7",
-            "5CorT9c1EKYf2rtE4rpFhnQTf3JsBR3EZGfw1QhSBPVSn3t7",
-            {
-              "grandpa": "5F3Ubu6tZkuuBGCvfG6K3owQrrpSNdqeKuZj2wSz1z5LvWYD",
-              "babe": "5EUJ6BjBJiztjsN14rFX5SXJFYzdeXbDsp6MeAJve7q2WkDm",
-              "im_online": "5EUJ6BjBJiztjsN14rFX5SXJFYzdeXbDsp6MeAJve7q2WkDm",
-              "authority_discovery": "5EUJ6BjBJiztjsN14rFX5SXJFYzdeXbDsp6MeAJve7q2WkDm"
             }
           ]
         ]
@@ -135,26 +85,6 @@
               "validator_account_id": "5HZFQohYpN4MVyGjiq8bJhojt9yCVa8rXd4Kt9fmh5gAbQqA",
               "sig": []
             }
-          ],
-          [
-            "5HpyALyFUJTDMc6iRziEKwh1BkvMHFJGHss3mJjXefuzCap3",
-            {
-              "pub_key": [],
-              "account_id": "5HpyALyFUJTDMc6iRziEKwh1BkvMHFJGHss3mJjXefuzCap3",
-              "validator_pub_key": [],
-              "validator_account_id": "5HpyALyFUJTDMc6iRziEKwh1BkvMHFJGHss3mJjXefuzCap3",
-              "sig": []
-            }
-          ],
-          [
-            "5EUJ6BjBJiztjsN14rFX5SXJFYzdeXbDsp6MeAJve7q2WkDm",
-            {
-              "pub_key": [],
-              "account_id": "5EUJ6BjBJiztjsN14rFX5SXJFYzdeXbDsp6MeAJve7q2WkDm",
-              "validator_pub_key": [],
-              "validator_account_id": "5EUJ6BjBJiztjsN14rFX5SXJFYzdeXbDsp6MeAJve7q2WkDm",
-              "sig": []
-            }
           ]
         ],
         "workReports": [
@@ -165,31 +95,7 @@
               "block_number": 0,
               "block_hash": [],
               "empty_root": [],
-              "empty_workload": 10000,
-              "meaningful_workload": 0,
-              "sig": []
-            }
-          ],
-          [
-            "5HpyALyFUJTDMc6iRziEKwh1BkvMHFJGHss3mJjXefuzCap3",
-            {
-              "pub_key": [],
-              "block_number": 0,
-              "block_hash": [],
-              "empty_root": [],
-              "empty_workload": 10000,
-              "meaningful_workload": 0,
-              "sig": []
-            }
-          ],
-          [
-            "5EUJ6BjBJiztjsN14rFX5SXJFYzdeXbDsp6MeAJve7q2WkDm",
-            {
-              "pub_key": [],
-              "block_number": 0,
-              "block_hash": [],
-              "empty_root": [],
-              "empty_workload": 10000,
+              "empty_workload": 100000000,
               "meaningful_workload": 0,
               "sig": []
             }
