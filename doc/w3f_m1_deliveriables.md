@@ -10,7 +10,7 @@
   The middleware layer connecting TEE and Chain Node.
 - [Crust Client](https://github.com/crustio/crust-client/tree/w3f/m1)  
   The client management tool for installing and operating whole Crust App(including Crust, Crust TEE, Storage(IPFS) and Crust API).
-- [Crust Apps](https://github.com/crustio/crust-apps/tree/w3f/m1)
+- [Crust Apps](https://github.com/crustio/crust-apps/tree/w3f/m1)  
   A Portal into the Crust network based on [@polkadot/apps](https://github.com/polkadot-js/apps). Provides a view and interaction layer from a browser.
 
 ## M1 Deliverables
@@ -125,6 +125,10 @@
     ./scripts/package.sh
     ```
 
+#### 2.4 Crust Apps
+
+Follow [this](https://github.com/crustio/crust-apps/tree/w3f/m1#getting-started) to compile and run `Crust Apps`.
+
 ### 3. Install Crust
 
 - Clone Crust Client
@@ -159,6 +163,8 @@
 - Run `tail -f logs/genesis1_tee.log`, monitoring tee's status, make sure you see the log printed like below: ![tee_log](m1_img/tee.png)
 
 #### Mode 2 - Run as watcher(Read Only Node)
+
+> If you run `Crust Apps` and `Crust` at different machines, you need a watcher for Apps to connect
 
 - Unpack `files.tar` like `2.2.2` does
 - `cd files/crust-alphanet`
