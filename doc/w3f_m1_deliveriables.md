@@ -237,13 +237,13 @@
 
 #### 1. Look through work report
 
-- Step1 - [Start genesis node](#jump)
+- Step1 - [Start genesis node](#mode-1---run-as-genesis)
 - Step2 - Run `tail -f logs/genesis1_tee.log`, monitoring TEE's running status until print **works reported** info shows below: ![tee_report_works](m1_img/workreport.png)  
 - Step3 - You can look through the work report from `Chain state` in `Crust Apps` ![apps_work_report](m1_img/workreportweb.png)
 
 #### 2. Look through TEE identity
 
-- Step1 - [Start genesis node](#jump)  
+- Step1 - [Start genesis node](#mode-1---run-as-genesis) 
 - Step2 - Run `tail -f logs/genesis1_tee.log`, monitoring TEE's running status until print **identity** info shows below: ![tee_identity](m1_img/identity1.png)  
 - Step3 - You can look through the work report from `Chain state` in `Crust Apps` ![apps_identity](m1_img/apps_identity.png)
 
