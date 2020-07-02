@@ -58,6 +58,17 @@
     sudo apt install libleveldb-dev
     ```
 
+5. Preparing compile dependency
+
+  > `files.tar` is a package contains some standard dependencies for `crust-tee` and `crust-client`.
+
+  1. Download [files.tar](https://drive.google.com/file/d/1Z6kNbnBU0sF4GdTeJ6i39P99UUATeppn/view?usp=sharing)
+  2. Unpack `files.tar`, you will get `files` folder
+      - `resource/`: SGX dependencies
+      - `crust-alphanet/`: Milestone 1's testing configurations
+      - `bin/`: Standard ipfs client
+      - `crust-subkey`: Standard substrate [subkey](https://www.substrate.io/kb/integrate/subkey)
+
 ### 2. Compile and Package
 
 #### 2.1 Chain Node
@@ -90,19 +101,20 @@
     ```
 
 2. Add dependencies
-    > This step is for importing TEE's C++ dynamic libraries and `IPFS` execution file, this will let TEE module easily communicate with `IPFS`.
 
-    - Download [files.tar](https://drive.google.com/file/d/1Z6kNbnBU0sF4GdTeJ6i39P99UUATeppn/view?usp=sharing)
-    - Unpack `files.tar`, you will get `files` folder
-        ```
-        - bin/
-        - crust-alphanet/
-        - crust-subkey
-        - resource/
-        ```
-    - Copy `bin/` and `resource/` folder under `crust-tee` project folder
+    - Copy `files/bin/` and `files/resource/` folder under `crust-tee` project folder
+    - **You will get folder structure like**:
+    ```
+    - docs/img
+    - scripts
+    - src
+    - test
+    - bin/ (copy from files/ folder)
+    - resource/ (copy from files/ folder)
+    - ...
+    ```
 
-3. Pacakge
+3. Pacakge and generate `crust-tee.tar`
 
     ```shell
     ./scripts/package.sh
@@ -141,10 +153,21 @@ Follow [this](https://github.com/crustio/crust-apps/tree/w3f/m1#getting-started)
 
 - Add dependencies
   - Create new folder named `resource`
-  - Unpack `files.tar` like `2.2.2` does
-  - Copy `crust-subkey` under `resource` folder
-  - Move `crust.tar`, `crust-tee-0.3.0.tar` and `crust-api.tar` generated before into `resource` folder
-  - Change `crust-tee-0.3.0.tar` to `crust-tee.tar`
+  - Copy `files/crust-subkey` under `resource` folder
+  - Move `crust/crust.tar`, `crust-tee/crust-tee.tar` and `crust-api/crust-api.tar` generated before into `resource` folder
+  - **You will get the folder structure like:**
+  ```
+  - custom/
+  - doc/
+  - etc/
+  - script/
+  - tool/
+  - resource/
+    - crust-subkey
+    - crust.tar
+    - crust-tee.tar
+    - crust-api.tar
+  ```
 
 - Install
 
@@ -156,7 +179,6 @@ Follow [this](https://github.com/crustio/crust-apps/tree/w3f/m1#getting-started)
 
 #### Mode 1 - Run as genesis
 
-- Unpack `files.tar` like `2.2.2` does
 - `cd files/crust-alphanet`, you can see a default `genesis1_config` as a genesis validator role
 - Run `./start.sh` to start genesis node(make sure you already under `crust-alphanet` folder)
 - Run `tail -f logs/genesis1_chain.log`, monitoring chain node's status, waiting for stability blocking show below: ![chain_log](m1_img/chain.png)
@@ -166,7 +188,6 @@ Follow [this](https://github.com/crustio/crust-apps/tree/w3f/m1#getting-started)
 
 > If you run `Crust Apps` and `Crust` at different machines, you need a watcher for Apps to connect
 
-- Unpack `files.tar` like `2.2.2` does
 - `cd files/crust-alphanet`
 - Run `./watcher.sh`
 
