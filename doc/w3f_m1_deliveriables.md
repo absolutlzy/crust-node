@@ -60,14 +60,23 @@
 
 5. Preparing compile dependency
 
-  > `files.tar` is a package contains some standard dependencies for `crust-tee` and `crust-client`.
+  > `files.tar` is a package contains some standard dependencies for `crust-tee` and `crust-client`. All dependencies can be downloaded from **public urls**. You can download from urls shows below.
 
   1. Download [files.tar](https://drive.google.com/file/d/1Z6kNbnBU0sF4GdTeJ6i39P99UUATeppn/view?usp=sharing)
   2. Unpack `files.tar`, you will get `files` folder
-      - `resource/`: SGX dependencies
-      - `crust-alphanet/`: Milestone 1's testing configurations
-      - `bin/`: Standard ipfs client
-      - `crust-subkey`: Standard substrate [subkey](https://www.substrate.io/kb/integrate/subkey)
+      - `resource/`: SGX and `crust-tee` dependencies, all dependencies can be downloaded from **public urls**. You can download from urls shows below.
+        - boost_1_70_0.tar.gz: https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.gz
+        - intel-sgx-ssl-master.zip: https://codeload.github.com/intel/intel-sgx-ssl/zip/master   
+        - libsgx-enclave-common_2.7.101.3-xenial1_amd64.deb: https://download.01.org/intel-sgx/sgx-linux/2.7.1/distro/ubuntu16.04-server/libsgx-enclave-common_2.7.101.3-xenial1_amd64.deb  
+        - libsgx-enclave-common-dev_2.7.101.3-xenial1_amd64.deb: https://download.01.org/intel-sgx/sgx-linux/2.7.1/distro/ubuntu16.04-server/libsgx-enclave-common-dev_2.7.101.3-xenial1_amd64.deb   
+        - openssl-1.1.1d.tar.gz: https://www.openssl.org/source/openssl-1.1.1d.tar.gz
+        - sgx_linux_x64_driver_2.6.0_4f5bb63.bin: https://download.01.org/intel-sgx/sgx-linux/2.7.1/distro/ubuntu16.04-server/sgx_linux_x64_driver_2.6.0_4f5bb63.bin    
+        - sgx_linux_x64_sdk_2.7.101.3.bin: https://download.01.org/intel-sgx/sgx-linux/2.7.1/distro/ubuntu16.04-server/sgx_linux_x64_sdk_2.7.101.3.bin   
+      - `crust-alphanet/`: Milestone 1's testing configurations, this is used for testing `Alphanet`.
+      - `bin/`: Standard IPFS client, you can download from **IPFS' github site**.
+        - ipfs (go-ipfs_v0.6.0_openbsd-amd64.tar.gz
+): https://github.com/ipfs/go-ipfs/releases/tag/v0.6.0
+      - `crust-subkey`: Standard substrate subkey: https://www.substrate.io/kb/integrate/subkey
 
 ### 2. Compile and Package
 
