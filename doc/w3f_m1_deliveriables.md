@@ -73,9 +73,11 @@
         - sgx_linux_x64_driver_2.6.0_4f5bb63.bin: https://download.01.org/intel-sgx/sgx-linux/2.7.1/distro/ubuntu16.04-server/sgx_linux_x64_driver_2.6.0_4f5bb63.bin    
         - sgx_linux_x64_sdk_2.7.101.3.bin: https://download.01.org/intel-sgx/sgx-linux/2.7.1/distro/ubuntu16.04-server/sgx_linux_x64_sdk_2.7.101.3.bin   
       - `crust-alphanet/`: Milestone 1's testing configurations, this is used for testing `Alphanet`.
-      - `bin/`: Standard IPFS client, you can download from **IPFS' github site**.
-        - ipfs (go-ipfs_v0.6.0_openbsd-amd64.tar.gz
-): https://github.com/ipfs/go-ipfs/releases/tag/v0.6.0
+      - `bin/`: Customized IPFS client, you can clone and build from **crustio github site**.
+        - ipfs: https://github.com/crustio/ipfs
+          - Clone repo: `git clone https://github.com/crustio/ipfs.git`;
+          - Build repo: `cd ipfs & make build`
+          - You can see `ipfs` execution file under `cmd/ipfs/` folder.
       - `crust-subkey`: Standard substrate subkey: https://www.substrate.io/kb/integrate/subkey
 
 ### 2. Compile and Package
