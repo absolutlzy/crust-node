@@ -4,11 +4,11 @@
 
 - [Crust](https://github.com/crustio/crust/tree/w3f/m1)  
   The chain node which implement Crust protocol based on substrate.
-- [Crust TEE](https://github.com/crustio/crust-tee/tree/w3f/m1)  
+- [Crust sWorker](https://github.com/crustio/crust-sworker/tree/w3f/m1)  
   The quantitative layer(storage and computation resources) based on TEE technology.
 - [Crust API](https://github.com/crustio/crust-api/tree/w3f/m1)  
   The middleware layer connecting TEE and Chain Node.
-- [Crust Client](https://github.com/crustio/crust-client/tree/w3f/m1)  
+- [Crust Node](https://github.com/crustio/crust-node/tree/w3f/m1)  
   The client management tool for installing and operating whole Crust App(including Crust, Crust TEE, Storage(IPFS) and Crust API).
 - [Crust Apps](https://github.com/crustio/crust-apps/tree/w3f/m1)  
   A Portal into the Crust network based on [@polkadot/apps](https://github.com/polkadot-js/apps). Provides a view and interaction layer from a browser.
@@ -60,7 +60,7 @@
 
 5. Preparing compile dependency
 
-  > `files.tar` is a package contains some standard dependencies for `crust-tee` and `crust-client`. All dependencies can be downloaded from **public urls**. You can download from urls shows below.
+  > `files.tar` is a package contains some standard dependencies for `crust-tee` and `crust-node`. All dependencies can be downloaded from **public urls**. You can download from urls shows below.
 
   1. Download [files.tar](https://drive.google.com/file/d/1Z6kNbnBU0sF4GdTeJ6i39P99UUATeppn/view?usp=sharing)
   2. Unpack `files.tar`, you will get `files` folder
@@ -154,11 +154,11 @@ Follow [this](https://github.com/crustio/crust-apps/tree/w3f/m1#getting-started)
 
 ### 3. Install Crust
 
-- Clone Crust Client
+- Clone Crust Node
 
     ```shell
-    git clone https://github.com/crustio/crust-client.git
-    cd crust-client
+    git clone https://github.com/crustio/crust-node.git
+    cd crust-node
     git checkout w3f/m1
     ```
 
