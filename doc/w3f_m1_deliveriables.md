@@ -90,7 +90,7 @@ Please refer the [Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwe
   - Step1 - Run command below to increase 10GB storage
 
   ```shell
-  curl --location --request POST 'http://127.0.0.1:12222/api/v0/srd/change' --header 'backup: {"address":"5EkFb4p7R4qnGTTYbsi7mQQzL1e7D13RQwBMm49HkN6bvzjt","encoded":"0x4800d1de3925a9b792ae2497a5ed109af5eb6d8b8d46936ccee405dd661c7a5ef96c7eb263cf3bf71bd6667a2e942e4e1c78b0bee8a325da3512880882299318483deeec128acb4a0f4fc9a12638817546356017aded813a6c52a689635d7a9d420cb7c5f60ade3d0d2f4bd0f370377069d5799161b586f32e9508b5ac9d4561002b66fcbb73f3bbf6a8c006e9e9f13a726ce278221e6ecdb04c288808","encoding":{"content":["pkcs8","sr25519"],"type":"xsalsa20-poly1305","version":"2"},"meta":{"genesisHash":"0xa5bec4b73f15b4f6e99eee42778ab6754c90aeadcd2ae86aa79e9c5c7a55dd30","name":"w3f_V_controller","tags":[],"whenCreated":1596525471197}}' --header 'Content-Type: application/json' --data-raw '{"change":10}'
+  curl --location --request POST 'http://127.0.0.1:12222/api/v0/srd/change' --header 'backup: {"address":"5EHP5jLDdyNevsXhvJBwo18srU95ijYoWH42C4TqYPpmeVP7","encoded":"0xdfaabf5fda7c134549bc8a6fefe8cc3ff8bc6b1c3885ae50ec2e2f64cf20ebbbefd34c79715e4722443b205e62cfb9fd1bfca61e7cd036599a90587a7dd2d62f352abf9f3799dd7ce1853474cfe23cd5f9b4b6e999b338005bf98ee545b24515e22152a1923660876330f776fc5fad1f4e47ee147de6e2f087a038413aa6bd21519fb9bb19bbd193bcbe9b5fd40ad9508b0d82e93b2e56aeec7c84945c","encoding":{"content":["pkcs8","sr25519"],"type":"xsalsa20-poly1305","version":"2"},"meta":{"genesisHash":"0xa5bec4b73f15b4f6e99eee42778ab6754c90aeadcd2ae86aa79e9c5c7a55dd30","name":"W3F V Controller","tags":[],"whenCreated":1596619069134}}' --header 'Content-Type: application/json' --data-raw '{"change":10}'
   ```
 
   - Step2 - **After 1 era**, you can look through the new work report from Chain state in [Crust Apps](http://apps.crust.network/#/chainstate)
@@ -100,7 +100,7 @@ Please refer the [Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwe
   - Step1 - Run command below to decrease 10GB storage
 
     ```shell
-    curl --location --request POST 'http://127.0.0.1:12222/api/v0/srd/change' --header 'backup: {"address":"5EkFb4p7R4qnGTTYbsi7mQQzL1e7D13RQwBMm49HkN6bvzjt","encoded":"0x4800d1de3925a9b792ae2497a5ed109af5eb6d8b8d46936ccee405dd661c7a5ef96c7eb263cf3bf71bd6667a2e942e4e1c78b0bee8a325da3512880882299318483deeec128acb4a0f4fc9a12638817546356017aded813a6c52a689635d7a9d420cb7c5f60ade3d0d2f4bd0f370377069d5799161b586f32e9508b5ac9d4561002b66fcbb73f3bbf6a8c006e9e9f13a726ce278221e6ecdb04c288808","encoding":{"content":["pkcs8","sr25519"],"type":"xsalsa20-poly1305","version":"2"},"meta":{"genesisHash":"0xa5bec4b73f15b4f6e99eee42778ab6754c90aeadcd2ae86aa79e9c5c7a55dd30","name":"w3f_V_controller","tags":[],"whenCreated":1596525471197}}' --header 'Content-Type: application/json' --data-raw '{"change":-10}'
+    curl --location --request POST 'http://127.0.0.1:12222/api/v0/srd/change' --header 'backup: {"address":"5EHP5jLDdyNevsXhvJBwo18srU95ijYoWH42C4TqYPpmeVP7","encoded":"0xdfaabf5fda7c134549bc8a6fefe8cc3ff8bc6b1c3885ae50ec2e2f64cf20ebbbefd34c79715e4722443b205e62cfb9fd1bfca61e7cd036599a90587a7dd2d62f352abf9f3799dd7ce1853474cfe23cd5f9b4b6e999b338005bf98ee545b24515e22152a1923660876330f776fc5fad1f4e47ee147de6e2f087a038413aa6bd21519fb9bb19bbd193bcbe9b5fd40ad9508b0d82e93b2e56aeec7c84945c","encoding":{"content":["pkcs8","sr25519"],"type":"xsalsa20-poly1305","version":"2"},"meta":{"genesisHash":"0xa5bec4b73f15b4f6e99eee42778ab6754c90aeadcd2ae86aa79e9c5c7a55dd30","name":"W3F V Controller","tags":[],"whenCreated":1596619069134}}' --header 'Content-Type: application/json' --data-raw '{"change":-10}'
     ```
 
   - Step2 - **After 1 era**, you can look through the new work report from Chain state in [Crust Apps](http://apps.crust.network/#/chainstate)
@@ -142,17 +142,17 @@ Please refer the [Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwe
 
 - If validator's stake limit goes **larger**, nothing will happen
 - If validator's stake limit goes **smaller**:
-  - Case1: `stake_limit > validator_own_stakes` and `stake_limit < total_stakes`(validator's own stakes + guaranteed stakes).
+  - **Case1**: `stake_limit > validator_own_stakes` and `stake_limit < total_stakes`(validator's own stakes + guaranteed stakes).
     - Step 1: Cut `2 GB` storage volume
     ```shell
-    curl --location --request POST 'http://127.0.0.1:12222/api/v0/srd/change' --header 'backup: {"address":"5EkFb4p7R4qnGTTYbsi7mQQzL1e7D13RQwBMm49HkN6bvzjt","encoded":"0x4800d1de3925a9b792ae2497a5ed109af5eb6d8b8d46936ccee405dd661c7a5ef96c7eb263cf3bf71bd6667a2e942e4e1c78b0bee8a325da3512880882299318483deeec128acb4a0f4fc9a12638817546356017aded813a6c52a689635d7a9d420cb7c5f60ade3d0d2f4bd0f370377069d5799161b586f32e9508b5ac9d4561002b66fcbb73f3bbf6a8c006e9e9f13a726ce278221e6ecdb04c288808","encoding":{"content":["pkcs8","sr25519"],"type":"xsalsa20-poly1305","version":"2"},"meta":{"genesisHash":"0xa5bec4b73f15b4f6e99eee42778ab6754c90aeadcd2ae86aa79e9c5c7a55dd30","name":"w3f_V_controller","tags":[],"whenCreated":1596525471197}}' --header 'Content-Type: application/json' --data-raw '{"change":-2}'
+    curl --location --request POST 'http://127.0.0.1:12222/api/v0/srd/change' --header 'backup: {"address":"5EHP5jLDdyNevsXhvJBwo18srU95ijYoWH42C4TqYPpmeVP7","encoded":"0xdfaabf5fda7c134549bc8a6fefe8cc3ff8bc6b1c3885ae50ec2e2f64cf20ebbbefd34c79715e4722443b205e62cfb9fd1bfca61e7cd036599a90587a7dd2d62f352abf9f3799dd7ce1853474cfe23cd5f9b4b6e999b338005bf98ee545b24515e22152a1923660876330f776fc5fad1f4e47ee147de6e2f087a038413aa6bd21519fb9bb19bbd193bcbe9b5fd40ad9508b0d82e93b2e56aeec7c84945c","encoding":{"content":["pkcs8","sr25519"],"type":"xsalsa20-poly1305","version":"2"},"meta":{"genesisHash":"0xa5bec4b73f15b4f6e99eee42778ab6754c90aeadcd2ae86aa79e9c5c7a55dd30","name":"W3F V Controller","tags":[],"whenCreated":1596619069134}}' --header 'Content-Type: application/json' --data-raw '{"change":-2}'
     ```
     - Step 2: **After 1 era**, you will see *Guarantor's Stake* reduced from `staker` API
     ![passive_cut_g_stake](m1_img/6-1.png)
-  - Case2: `stake_limit < validator_bonded_stakes`.
+  - **Case2**: `stake_limit < validator_bonded_stakes`.
     - Step1: Continue to cut `5 GB` storage volume
     ```shell
-    curl --location --request POST 'http://127.0.0.1:12222/api/v0/srd/change' --header 'backup: {"address":"5EkFb4p7R4qnGTTYbsi7mQQzL1e7D13RQwBMm49HkN6bvzjt","encoded":"0x4800d1de3925a9b792ae2497a5ed109af5eb6d8b8d46936ccee405dd661c7a5ef96c7eb263cf3bf71bd6667a2e942e4e1c78b0bee8a325da3512880882299318483deeec128acb4a0f4fc9a12638817546356017aded813a6c52a689635d7a9d420cb7c5f60ade3d0d2f4bd0f370377069d5799161b586f32e9508b5ac9d4561002b66fcbb73f3bbf6a8c006e9e9f13a726ce278221e6ecdb04c288808","encoding":{"content":["pkcs8","sr25519"],"type":"xsalsa20-poly1305","version":"2"},"meta":{"genesisHash":"0xa5bec4b73f15b4f6e99eee42778ab6754c90aeadcd2ae86aa79e9c5c7a55dd30","name":"w3f_V_controller","tags":[],"whenCreated":1596525471197}}' --header 'Content-Type: application/json' --data-raw '{"change":-5}'
+    curl --location --request POST 'http://127.0.0.1:12222/api/v0/srd/change' --header 'backup: {"address":"5EHP5jLDdyNevsXhvJBwo18srU95ijYoWH42C4TqYPpmeVP7","encoded":"0xdfaabf5fda7c134549bc8a6fefe8cc3ff8bc6b1c3885ae50ec2e2f64cf20ebbbefd34c79715e4722443b205e62cfb9fd1bfca61e7cd036599a90587a7dd2d62f352abf9f3799dd7ce1853474cfe23cd5f9b4b6e999b338005bf98ee545b24515e22152a1923660876330f776fc5fad1f4e47ee147de6e2f087a038413aa6bd21519fb9bb19bbd193bcbe9b5fd40ad9508b0d82e93b2e56aeec7c84945c","encoding":{"content":["pkcs8","sr25519"],"type":"xsalsa20-poly1305","version":"2"},"meta":{"genesisHash":"0xa5bec4b73f15b4f6e99eee42778ab6754c90aeadcd2ae86aa79e9c5c7a55dd30","name":"W3F V Controller","tags":[],"whenCreated":1596619069134}}' --header 'Content-Type: application/json' --data-raw '{"change":-5}'
     ```
     - Step2: **After 1 era**, you will see the *Guarantor* already been removed from `staker` API.
     ![passive_cut_all](m1_img/6-2.jpg)
@@ -259,8 +259,8 @@ Validator Set will elect every era, you can check from Staking page in [Crust Ap
   {
     "base_url": "0.0.0.0:17000",
     "crust": {
-      "address": "5FbxxwasgLPHJ3cEMcqJuohgrJ72E9dBwgw1Yw3VXbvEwK9u",
-      "backup": "{\"address\":\"5FbxxwasgLPHJ3cEMcqJuohgrJ72E9dBwgw1Yw3VXbvEwK9u\",\"encoded\":\"0x8c7828311a3a87b339ec3841d923cfff32bb6f326339c052ced3cde7cfbb480321e7567e16d45035b6b86f7b85dd631312ddfa63bdc9b64e150da278e58847d2ad6b415f09f5654ba08b06761092273ddb5eb790d44e7ec3011275740f812ece858173bf9b590d217b58c8b05b95e391587807173b353f7d5ac764d0190b6b44202138ef96e81fbbe3060c0cc07c94739005894548548c230b4b7a686b\",\"encoding\":{\"content\":[\"pkcs8\",\"sr25519\"],\"type\":\"xsalsa20-poly1305\",\"version\":\"2\"},\"meta\":{\"name\":\"M1 Control\",\"tags\":[],\"whenCreated\":1589272669073}}",
+      "address": "5EqajgoW3TWaSnPgo4LC2AJex2BF63zshaBSanCveSpeMaAN",
+      "backup": "{\"address\":\"5EqajgoW3TWaSnPgo4LC2AJex2BF63zshaBSanCveSpeMaAN\",\"encoded\":\"0x54baecbfa6c35ccfdbaad49c28b8fb907984e5a8db430ebdda09296dc8090b92942e3b602cba44159954142ad15ffdfe0e2761de6dd6cabce72d9d54b0697785782f276e1713fc02abb276d3912d70f946d48afb3561f714e35ff45846b1ff0b7bf760b81928aa9fdaf9afcbce47460e46f0cbc6ce6098f3f17dafdd59a5d51221d2958257d7124694344f41b3fd76a095af5a0654fd3449cbbfdb951a\",\"encoding\":{\"content\":[\"pkcs8\",\"sr25519\"],\"type\":\"xsalsa20-poly1305\",\"version\":\"2\"},\"meta\":{\"genesisHash\":\"0xa5bec4b73f15b4f6e99eee42778ab6754c90aeadcd2ae86aa79e9c5c7a55dd30\",\"name\":\"W3F G Controller\",\"tags\":[],\"whenCreated\":1596619123432}}",
       "base_url": "[Server IP Address]:56666/api/v1",
       "password": "123"
     },
@@ -305,7 +305,7 @@ Validator Set will elect every era, you can check from Staking page in [Crust Ap
 
 - Step 6: Fill the `stored_key`(PATH value) with above *returned path*. Then declare the file to chain and request provider to generate store proof
   ```shell
-  sudo docker exec -it karst /bin/bash -c 'karst declare "{\"hash\":\"32c5acdce8b26a2854388138bdb812f588fd783246dd00fbcdbf5fb1ecc3abd1\",\"size\":800000,\"links_num\":1,\"links\":[{\"hash\":\"5c9c53d767ff846d539d06f2d61318b1cd4e7b0ecfdc3e6ab02706e4d9fe8552\",\"size\":800000,\"links_num\":0,\"links\":[],\"stored_key\":\"group1/M00/00/36/wKgyB18qaJOAQ_wsAAw1ANBQ2Ww8836968\"}],\"stored_key\":\"\"}" 60 5EkFb4p7R4qnGTTYbsi7mQQzL1e7D13RQwBMm49HkN6bvzjt'
+  sudo docker exec -it karst /bin/bash -c 'karst declare "{\"hash\":\"32c5acdce8b26a2854388138bdb812f588fd783246dd00fbcdbf5fb1ecc3abd1\",\"size\":800000,\"links_num\":1,\"links\":[{\"hash\":\"5c9c53d767ff846d539d06f2d61318b1cd4e7b0ecfdc3e6ab02706e4d9fe8552\",\"size\":800000,\"links_num\":0,\"links\":[],\"stored_key\":\"group1/M00/00/36/wKgyB18qaJOAQ_wsAAw1ANBQ2Ww8836968\"}],\"stored_key\":\"\"}" 60 5EHP5jLDdyNevsXhvJBwo18srU95ijYoWH42C4TqYPpmeVP7'
   ```
 - Step 7: It will return a storage order id from chain
   ```shell
@@ -314,15 +314,15 @@ Validator Set will elect every era, you can check from Staking page in [Crust Ap
 - Step 8: **After 1 era**, you can check the work report which already contains the meaningful file with hash `32c5acdce8b26a2854388138bdb812f588fd783246dd00fbcdbf5fb1ecc3abd1`
   ![meaningful_file](m1_img/8-5.jpg)
 
-##### 8.2 Get file
+##### 8.3 Get file
 
 - Step 1: Get file stored info
   ```shell
-  sudo docker exec -it karst /bin/bash -c 'karst obtain 32c5acdce8b26a2854388138bdb812f588fd783246dd00fbcdbf5fb1ecc3abd1 5EkFb4p7R4qnGTTYbsi7mQQzL1e7D13RQwBMm49HkN6bvzjt'
+  sudo docker exec -it karst /bin/bash -c 'karst obtain 32c5acdce8b26a2854388138bdb812f588fd783246dd00fbcdbf5fb1ecc3abd1 5EHP5jLDdyNevsXhvJBwo18srU95ijYoWH42C4TqYPpmeVP7'
   ```
   It will return a FastDFS download path
   ```shell
-  [INFO] 2020/08/05 08:14:00 {"info":"Obtain '32c5acdce8b26a2854388138bdb812f588fd783246dd00fbcdbf5fb1ecc3abd1' from '5EkFb4p7R4qnGTTYbsi7mQQzL1e7D13RQwBMm49HkN6bvzjt' successfully in 37.046923ms !","merkle_tree":"{\"hash\":\"32c5acdce8b26a2854388138bdb812f588fd783246dd00fbcdbf5fb1ecc3abd1\",\"size\":800000,\"links_num\":1,\"links\":[{\"hash\":\"5c9c53d767ff846d539d06f2d61318b1cd4e7b0ecfdc3e6ab02706e4d9fe8552\",\"size\":800000,\"links_num\":0,\"links\":[],\"stored_key\":\"group1/M00/00/36/wKgyB18qakiAQMm5AAw1ANBQ2Ww0592384\"}],\"stored_key\":\"\"}","status":200}
+  [INFO] 2020/08/05 08:14:00 {"info":"Obtain '32c5acdce8b26a2854388138bdb812f588fd783246dd00fbcdbf5fb1ecc3abd1' from '5EHP5jLDdyNevsXhvJBwo18srU95ijYoWH42C4TqYPpmeVP7' successfully in 37.046923ms !","merkle_tree":"{\"hash\":\"32c5acdce8b26a2854388138bdb812f588fd783246dd00fbcdbf5fb1ecc3abd1\",\"size\":800000,\"links_num\":1,\"links\":[{\"hash\":\"5c9c53d767ff846d539d06f2d61318b1cd4e7b0ecfdc3e6ab02706e4d9fe8552\",\"size\":800000,\"links_num\":0,\"links\":[],\"stored_key\":\"group1/M00/00/36/wKgyB18qakiAQMm5AAw1ANBQ2Ww0592384\"}],\"stored_key\":\"\"}","status":200}
   ```
 - Step 2: Copy the `stored_key`, download to local
   ```shell
