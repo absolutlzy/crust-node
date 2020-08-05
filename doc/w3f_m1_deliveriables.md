@@ -5,7 +5,7 @@
 - [Crust](https://github.com/crustio/crust)  
   The chain node which implement Crust protocol based on substrate.
 - [Crust sWorker](https://github.com/crustio/crust-sworker)  
-  The quantitative layer(storage and computation resources) based on TEE technology.
+  Offchain storage work inspector based on TEE technology.
 - [Crust API](https://github.com/crustio/crust-api)  
   The middleware layer connecting sWorker and Chain Node.
 - [Crust Node](https://github.com/crustio/crust-node)  
@@ -33,6 +33,8 @@
 
 ## Testing Guide
 
+This document will guide you to build Crust source code, run a node connected with [Crust Maxwell 1.0 Open TestNet](https://github.com/crustio/crust/wiki/Maxwell-1.0-User-Guide), and test M1 features.
+
 ### 1. Build
 
 #### Pull from docker hub
@@ -45,7 +47,7 @@ docker pull crustio/crust:0.7.0 & docker pull crustio/crust-sworker:0.5.0 & dock
 
 #### Build docker from source
 
-Crust including 5 parts to build docker images, you can refer the document links below to clone and build from source code:
+Crust including 5 parts to build docker images, you can refer to the document links below to clone and build from source code:
 
 - [Crust](https://github.com/crustio/crust/tree/master/docker#dockerize-crust)
 - [Crust sWorker](https://github.com/crustio/crust-sworker#docker-model-for-developers)
@@ -55,9 +57,12 @@ Crust including 5 parts to build docker images, you can refer the document links
 
 ### 2. Run
 
-Please refer the [Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup).
+> ***IMPORTANT NOTES***:  
+> 1. We have already created 4 accounts for W3F and transfered some CRUs in: `W3F V Controller`, `W3F V Stash`, `W3F G Controller` and `W3F G Stash`.   
+> 2. You can use these 4 accounts directly and begin from step ["3.3 Bond" of Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup#33bond).
+> 3. To simplify the test process, we strongly recommend that you `bond` with `400 CRUs` and preparing `10GB` initial storage volume for `srd_init_capacity` in the step ["5.1 Config node setting" of Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup#51-config-node-setting)
 
-***NOTES***: We already provide you 4 accounts: `W3F V Controller`, `W3F V Stash`, `W3F G Controller` and `W3F G Stash`. **Please use those 4 accounts to run and test due to it already contains some CRUs inside**.
+Please refer the [Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup).
 
 ### 3. Test M1 deliverables
 
@@ -226,10 +231,10 @@ Validator Set will elect every era, you can check from Staking page in [Crust Ap
   sudo mkdir -p /home/web3/fastdfs/test
   ```
   ```shell
-  sudo cp storage.conf.sample storage.conf
+  sudo cp client.conf.sample client.conf
   ```
   ```shell
-  sudo vim storage.conf
+  sudo vim client.conf
   ```
   Change the `base_path` and `tracker_server` like the pic shows below, **Please change the `tracker_server`'s IP to your server IP**:
   ![fdfs_config](m1_img/8-3.png)
@@ -238,13 +243,9 @@ Validator Set will elect every era, you can check from Staking page in [Crust Ap
   ```shell
   sudo docker pull crustio/karst:0.2.0
   ```
-  - Step 2: Create folder
+  - Step 2: Config
   ```shell
-  mkdir -p /home/user/web3/kasrt
-  ```
-  - Step 3: Config
-  ```shell
-  cd /home/user/web3/kasrt
+  cd /home/user
   ```
   ```shell
   vi config.json
@@ -268,7 +269,7 @@ Validator Set will elect every era, you can check from Staking page in [Crust Ap
   }
   ```
   Please change `[Server IP Address]` to your server's address and make sure `56666` is open.
-  - Step 4: Run
+  - Step 3: Run
   ```shell
   sudo docker run -it -v /home/user/:/karst -e INIT_ARGS="-c /karst/config.json" --name karst --network host crustio/karst:0.2.0
   ```
