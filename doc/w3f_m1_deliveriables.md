@@ -42,7 +42,11 @@ This document will guide you to build Crust source code, run a node connected wi
 Or you can just pull the official images from [Docker Hub](https://hub.docker.com/u/crustio), just run
 
 ```shell
-docker pull crustio/crust:0.7.0 & docker pull crustio/crust-sworker:0.5.0 & docker pull crustio/config-generator:0.1.0 & docker pull crustio/karst:0.2.0 & docker pull crustio/crust-api:0.5.0
+sudo docker pull crustio/crust:0.7.0
+sudo docker pull crustio/crust-sworker:0.5.0
+sudo docker pull crustio/config-generator:0.1.0
+sudo docker pull crustio/karst:0.2.0
+sudo docker pull crustio/crust-api:0.5.0
 ```
 
 #### Build docker from source
