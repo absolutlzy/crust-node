@@ -308,7 +308,7 @@ Validator Set will elect every era, you can check from Staking page in [Crust Ap
   [INFO] 2020/08/05 08:10:54 {"info":"Declare successfully in 4.281581829s ! Store order hash is '0x9fc854d7372a753a3d337986ae3e57b1613f36d4ba9285092f0928fb1425bd8a'.","store_order_hash":"0x9fc854d7372a753a3d337986ae3e57b1613f36d4ba9285092f0928fb1425bd8a","status":200}
   ```
 - Step 8: **After 1 era**, you can check the work report which already contains the meaningful file with hash `32c5acdce8b26a2854388138bdb812f588fd783246dd00fbcdbf5fb1ecc3abd1`
-  ![meaningful_file]()
+  ![meaningful_file](m1_img/8-5.jpg)
 
 ##### 8.2 Get file
 
