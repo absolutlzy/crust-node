@@ -76,7 +76,7 @@ Please refer to the [Node Setup Manual](https://github.com/crustio/crust/wiki/Ma
 
 **Use validator accounts:**
 
-- Step1 - Make sure you already start [Crust sWorker](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup#63-start-sworker) and see your work report uploaded
+- Step1 - Make sure you have already started [Crust sWorker](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup#63-start-sworker) and see your work report uploaded
 - Step2 - You can see the work report from Chain state in [Crust Apps](http://apps.crust.network/#/chainstate), like the pic shows below
 
 ![work_report](m1_img/1.png)
@@ -86,7 +86,7 @@ Please refer to the [Node Setup Manual](https://github.com/crustio/crust/wiki/Ma
 **Use validator accounts:**
 
 - Step1 - Make sure you have already started [Crust sWorker](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup#63-start-sworker)
-- Step2 - You can look through the sWorker identity from Chain state in [Crust Apps](http://apps.crust.network/#/chainstate), like the pic shows below
+- Step2 - You can see the sWorker identity from Chain state in [Crust Apps](http://apps.crust.network/#/chainstate), like the pic shows below
 
 ![identity](m1_img/2.png)
 
