@@ -53,19 +53,40 @@ sudo docker pull crustio/crust-api:0.5.0
 
 #### Build docker from source
 
-Crust includes 5 major modules, you can refer to the document links below to clone and build from source code:
+Crust includes 5 major modules, please clone and checkout to `release/*` branch to build docker images:
 
-- [Crust](https://github.com/crustio/crust/tree/master/docker#dockerize-crust)
-- [Crust sWorker](https://github.com/crustio/crust-sworker#docker-model-for-developers)
-- [Karst](https://github.com/crustio/karst#docker)
-- [Crust API](https://github.com/crustio/crust-api#docker-launch)
-- [Crust Config Generator](https://github.com/crustio/crust-node/blob/master/generator/README.md#build-docker)
+- **Crust**:
+  1. `git clone https://github.com/crustio/crust.git`
+  2. `cd crust`
+  3. `git checkout release/0.7.0`
+  4. Run docker build refer to this [doc](https://github.com/crustio/crust/blob/release/0.7.0/docker/README.md)
+- **Crust sWorker**:
+  1. Please refer to this [doc's prerequisites](https://github.com/crustio/crust-sworker/blob/release/0.5.0/docs/Docker.md#prerequisites) first to install building dependencies.
+  2. `git clone https://github.com/crustio/crust-sworker.git`
+  3. `cd crust-sworker`
+  4. `git checkout release/0.5.0`
+  5. Follow the rest steps refering to this [doc](https://github.com/crustio/crust-sworker/blob/release/0.5.0/docs/Docker.md#build)
+- **Karst**:
+  1. `git clone https://github.com/crustio/karst.git`
+  2. `cd karst`
+  3. `git checkout release/0.2.0`
+  4. Run docker build refer to this [doc](https://github.com/crustio/karst/blob/release/0.2.0/docs/docker.md#build-image).
+- **Crust API**:
+  1. `git clone https://github.com/crustio/crust-api.git`
+  2. `cd crust-api`
+  3. `git checkout release/0.5.0`
+  4. Run docker build refer to this [doc](https://github.com/crustio/crust-api/blob/release/0.5.0/docs/docker.md)
+- **Crust Config Generator**:
+  1. `git clone https://github.com/crustio/crust-node.git`
+  2. `cd crust-node`
+  3. `git checkout w3f/m1`
+  4. Run docker build refer to this [doc](https://github.com/crustio/crust-node/blob/master/generator/README.md)
 
 ### 2. Run
 
 > ***IMPORTANT NOTES***:  
-> 1. We have already created 4 accounts for W3F and transfered some CRUs in: `W3F V Controller`, `W3F V Stash`, `W3F G Controller` and `W3F G Stash`.   
-> 2. You can use these 4 accounts directly and begin from step ["3.3 Bond" of Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup#33bond).
+> 1. We have already created 4 accounts for W3F and transfered some CRUs in: `W3F V Controller`, `W3F V Stash`, `W3F G Controller` and `W3F G Stash`.  
+> 2. You can use these 4 accounts directly and begin from step ["3.3 Bond" of Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup#33bond).  
 > 3. To simplify the test process, we strongly recommend that you `bond` with `400 CRUs` and preparing `10GB` initial storage volume for `srd_init_capacity` in the step ["5.1 Config node setting" of Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup#51-config-node-setting)
 
 Please refer to the [Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup).
