@@ -61,11 +61,10 @@ Crust includes 5 major modules, please clone and checkout to `release/*` branch 
   3. `git checkout release/0.7.0`
   4. Run docker build refer to this [doc](https://github.com/crustio/crust/blob/release/0.7.0/docker/README.md)
 - **Crust sWorker**:
-  1. Please refer to this [doc's prerequisites](https://github.com/crustio/crust-sworker/blob/release/0.5.0/docs/Docker.md#prerequisites) first to install building dependencies.
-  2. `git clone https://github.com/crustio/crust-sworker.git`
-  3. `cd crust-sworker`
-  4. `git checkout release/0.5.0`
-  5. Follow the rest steps refering to this [doc](https://github.com/crustio/crust-sworker/blob/release/0.5.0/docs/Docker.md#build)
+  1. `git clone https://github.com/crustio/crust-sworker.git`
+  2. `cd crust-sworker`
+  3. `git checkout release/0.5.0`
+  4. Run docker build refer to this [doc](https://github.com/crustio/crust-sworker/blob/release/0.5.0/docs/Docker.md#build)
 - **Karst**:
   1. `git clone https://github.com/crustio/karst.git`
   2. `cd karst`
