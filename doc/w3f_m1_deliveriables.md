@@ -88,7 +88,7 @@ Crust includes 5 major modules, please clone and checkout to `release/*` branch 
 > 2. You can use these 4 accounts directly and begin from step ["3.3 Bond" of Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup#33bond).  
 > 3. To simplify the test process, we strongly recommend that you `bond` with `400 CRUs` and preparing `10GB` initial storage volume for `srd_init_capacity` in the step ["5.1 Config node setting" of Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup#51-config-node-setting)
 
-Please refer to the [Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup).
+Please refer to the [Node Setup Manual](https://github.com/crustio/crust/wiki/Maxwell-1.0-Node-Setup) and complete the steps to setup the node.
 
 ### 3. Test M1 deliverables
 
