@@ -39,6 +39,9 @@ async function genSworkerComposeConfig(config) {
     devices: [
       '/dev/isgx:/dev/isgx'
     ],
+    extra_hosts: [
+      'ps.sgx.trustedservice.intel.com:52.54.150.145'
+    ],
     volumes: tempVolumes,
     environment: {
       ARGS: '-c /config/sworker_config.json --debug $EX_SWORKER_ARGS',
